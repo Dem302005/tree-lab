@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Динамічне додавання елементів з jQuery</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Список завдань</h1>
+            <p class="description">Додавайте нові елементи на сторінку динамічно — без перезавантаження</p>
+        </header>
+
+        <div class="form-container">
+            <form id="addForm" novalidate>
+                <div class="form-group">
+                    <label for="itemText">Текст елемента:</label>
+                    <input type="text" id="itemText" maxlength="60" placeholder="Наприклад, підготувати звіт" autocomplete="off">
+                    <div class="error" id="error"></div>
+                </div>
+
+                <div class="form-group">
+                    <label for="itemCategory">Категорія:</label>
+                    <select id="itemCategory">
+                        <option value="Навчання">Навчання</option>
+                        <option value="Робота">Робота</option>
+                        <option value="Особисте">Особисте</option>
+                    </select>
+                </div>
+
+                <div class="buttons">
+                    <button type="submit" id="addEnd">Додати в кінець</button>
+                    <button type="button" id="addStart">Додати на початок</button>
+                    <button type="button" id="addRandom" class="secondary">+ 3 випадкові</button>
+                    <button type="button" id="clearAll" class="danger">Очистити все</button>
+                </div>
+            </form>
+        </div>
+
+        <div class="list-container">
+            <div class="stats">
+                Усього: <strong id="total">0</strong> · Виконано: <strong id="done">0</strong>
+            </div>
+            <p class="empty" id="emptyMessage">Список порожній. Додайте перший елемент!</p>
+            <ul id="itemList"></ul>
+            <p class="hint">Клікніть на текст, щоб позначити елемент виконаним.</p>
+        </div>
+
+        <footer>
+            <p>Практична робота №3 - Розробка веб-застосунку з використанням jQuery</p>
+        </footer>
+    </div>
+
+    <!-- Підключення бібліотеки jQuery (локальна копія) -->
+    <script src="jquery-3.6.0.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
